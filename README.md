@@ -29,7 +29,7 @@ Steganosaurus is currently registered on:
 A big thanks to the community who provided the packages and designs used in the creation of steganosaurus. We hope that the project will continue to inspire and serve as a prrof of concept for kivy python apps in the larger realm of app development.
 
 
-
+*** 
 ### Creators Githubs 🦕
 
 
