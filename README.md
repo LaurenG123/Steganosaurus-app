@@ -6,3 +6,11 @@ In the steganography section, you'll begin by uploading an image from your devic
 
 "
 
+
+
+
+
+LISENCE INFO
+ Stepic python library: released under GNU GPL2 (permitted for non monetary public usage) 
+ Fonts : all registered font lisences permit free comercial usage
+ 
