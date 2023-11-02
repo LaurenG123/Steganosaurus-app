@@ -7,6 +7,7 @@ In the steganography section, you'll begin by uploading an image from your devic
 "
 
 
+<img width="749" alt="Screenshot 2023-11-02 140914" src="https://github.com/LaurenG123/Steganosaurus-app/assets/72687468/9fc2eed3-98e2-4401-9b81-118cba229fee">
 
 
 
