@@ -1,6 +1,6 @@
 # Steganosaurus-app
 ***
-Steganosaurus is a free, not for profit app, made with the purpose of demonstratings pythons front-end and back-end capabilities. Thanks to the open source kivy framework project, it is now possible to develop multi-touch, multi-playform applications in python for both mobile and web deployments.
+Steganosaurus is a free, not for profit app, made with the purpose of demonstrating pythons front-end and back-end capabilities. Thanks to the open source kivy framework project, it is now possible to develop multi-touch, multi-playform applications in python for both mobile and web deployments.
 
 ***
 ### An introduction to staganosaurus: 
@@ -26,7 +26,7 @@ A big thanks to the community who provided the packages and designs used in the 
 
 
 
-### Creators Githubs
+### Creators Githubs 
 
 
 <a href= "https://github.com/LaurenG123">LaurenG123</a>
