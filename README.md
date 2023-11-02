@@ -28,8 +28,11 @@ A big thanks to the community who provided the packages and designs used in the 
 
 ### Creators githubs
 
-LaurenG123
-Murkyside
+
+<a href= "https://github.com/LaurenG123">LaurenG123</a>
+
+<a href= "https://github.com/Murkyside">Murkyside</a>
+
 
 ***
 IMPORTANT LISENCE INFO
