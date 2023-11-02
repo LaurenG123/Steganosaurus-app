@@ -93,7 +93,10 @@ class SecretsScreen(MDScreen):
 
     def discovery(self):
         decryptedmessage = goop()
-        self.ids.decrypted_label.text = decryptedmessage
+        if decryptedmessage:
+            self.ids.decrypted_label.text = decryptedmessage
+        else:
+            self.ids.decrypted_label.text = "Please upload an image"
 
 class Stegmain(MDApp):
 
