@@ -92,13 +92,131 @@
             on_release: root.manager.current = 'uploadimage'
 
         MDRaisedButton:
-            text: 'Caeser Shift'
+            text: 'Caesar Shift'
             font_name: 'design_elem/Boron.otf'
             font_size: 50
             md_bg_color: 1,1,1,1
             size_hint: 0.7, 0.15
             pos_hint: {'center_x': 0.5, 'center_y': 0.4}
-            on_release: root.manager.current = 'welcome'
+            on_release: root.manager.current = 'caesarm'
+
+<CaesarMultiplex>:
+    FloatLayout:
+
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                app.root.current = 'welcome'
+
+        MDRaisedButton:
+            text: 'Encrypt with Caesar Cipher'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 50
+            md_bg_color: 1,1,1,1
+            size_hint: 0.7, 0.15
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            on_release: root.manager.current = 'caesare'
+
+        MDRaisedButton:
+            text: 'Decrypt with Caesar Cipher'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 50
+            md_bg_color: 1,1,1,1
+            size_hint: 0.7, 0.15
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            on_release: root.manager.current = 'caesard'
+<CaesarEncrypt>:
+    FloatLayout:
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                app.root.current = 'welcome'
+        MDLabel:
+            text: 'Encryption'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 55
+            color: 80, 80, 80, 1
+            pos_hint: {'center_x': 0.9, 'center_y': 0.9}
+        TextInput:
+            id: plaintext
+            hint_text: 'Enter plaintext'
+            size_hint: 0.3, 0.1
+            pos_hint: {'center_x': 0.3, 'center_y': 0.8}
+            foreground_color: 0.53, 0.72, 0.76, 1
+            multiline: False
+        TextInput:
+            id: shift
+            hint_text: 'Enter shift'
+            size_hint: 0.3, 0.1
+            pos_hint: {'center_x': 0.7, 'center_y': 0.8}
+            foreground_color: 0.53, 0.72, 0.76, 1
+            multiline: False
+        MDLabel:
+            id: output
+            text: 'Your result: '
+            font_name: 'design_elem/Boron.otf'
+            font_size: 55
+            color: 80, 80, 80, 1
+            pos_hint: {'center_x': 0.9, 'center_y': 0.6}
+
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                root.encrypt()
+
+<CaesarDecrypt>:
+    FloatLayout:
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                app.root.current = 'welcome'
+        MDLabel:
+            text: 'Decryption'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 55
+            color: 80, 80, 80, 1
+            pos_hint: {'center_x': 0.9, 'center_y': 0.9}
+        TextInput:
+            id: plaintext
+            hint_text: 'Enter plaintext'
+            size_hint: 0.3, 0.1
+            pos_hint: {'center_x': 0.3, 'center_y': 0.8}
+            foreground_color: 0.53, 0.72, 0.76, 1
+            multiline: False
+        TextInput:
+            id: shift
+            hint_text: 'Enter shift'
+            size_hint: 0.3, 0.1
+            pos_hint: {'center_x': 0.7, 'center_y': 0.8}
+            foreground_color: 0.53, 0.72, 0.76, 1
+            multiline: False
+        MDLabel:
+            id: output
+            text: 'Your result: '
+            font_name: 'design_elem/Boron.otf'
+            font_size: 55
+            color: 80, 80, 80, 1
+            pos_hint: {'center_x': 0.9, 'center_y': 0.6}
+
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                root.decrypt()
 
 
 <ChooseMethod>:

@@ -3,10 +3,20 @@ from steg_funcs import *
 from caesar import *
 class LoadingScreen(Screen):
     pass
+class CaesarMultiplex(Screen):
+    pass
 class WelcomeScreen(MDScreen):
     pass
 class EncryptType(MDScreen):
     pass
+class CaesarEncrypt(MDScreen):
+    def encrypt(self):
+        shifter = Caesar(self.ids.shift.text)
+        self.ids.output.text = "Your Result: " + shifter.encrypt(self.ids.plaintext.text)
+class CaesarDecrypt(MDScreen):
+    def decrypt(self):
+        shifter = Caesar(self.ids.shift.text)
+        self.ids.output.text = "Your Result: " + shifter.decrypt(self.ids.plaintext.text)
 class ChooseMethod(MDScreen):
     pass
 class Uploader(MDScreen):
@@ -93,6 +103,9 @@ class Stegmain(MDApp):
         sm = ScreenManager(transition=FadeTransition())
         screens = [
             LoadingScreen(name='loading'),
+            CaesarMultiplex(name='caesarm'),
+            CaesarEncrypt(name='caesare'),
+            CaesarDecrypt(name='caesard'),
             WelcomeScreen(name='welcome'),
             ChooseMethod(name='choose_method'),
             Encrypter(name='encryption'),
