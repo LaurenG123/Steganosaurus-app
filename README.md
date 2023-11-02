@@ -18,6 +18,11 @@ In the steganography section, you'll begin by uploading an image from your devic
 Steganosaurus was compiled using buildozer in a linux environment and is available as both an aab and apk executable file. 
 
 ### Where to find Steganosaurus
+Steganosaurus is currently registered on:
+
+
+
+A big thanks to the community who provided the packages and designs used in the creation of steganosaurus. We hope that the project will continue to inspire and serve as a prrof of concept for kivy python apps in the larger realm of app development.
 
 ***
 IMPORTANT LISENCE INFO
@@ -27,4 +32,6 @@ While steganosaurus is a free, not for profit, open source app, it is important 
  Stepic python library: Released under GNU GPL2 (permitted for non monetary public usage) 
  
  Fonts : All registered font lisences permit free comercial usage
+
+ 
  
