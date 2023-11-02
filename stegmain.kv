@@ -1,0 +1,486 @@
+<MDRaisedButton>:
+    md_bg_color: 0.53, 0.72, 0.76, 0.8
+    text_color: 0.75, 0.75, 0.75, 1
+    theme_text_color: 'Secondary'
+    font_name: 'design_elem/ethnocentric rg.otf'
+
+<LoadingScreen>:
+    Image:
+        source: 'design_elem/2544944.png'
+        target_screen: 'welcome'
+        size_hint: (0.5, 0.5)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+
+    MDLabel:
+        text: 'Steganosaurus'
+        font_name: 'design_elem/Boron.otf'
+        font_size: 65
+        bold: True
+        color: 80, 80, 80, 1
+        valign: 'center'
+        halign: 'center'
+
+
+<WelcomeScreen>:
+    RelativeLayout:
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1, 1
+
+            Image:
+                source: 'design_elem/2544944.png'
+
+            MDLabel:
+                text: 'Steganosaurus'
+                font_name: 'design_elem/Boron.otf'
+                font_size: 65
+                bold: True
+                color: 80, 80, 80, 1
+                valign: 'center'
+                halign: 'center'
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            ScrollView:
+                bar_width: 10
+                bar_color: 0.53, 0.72, 0.76, 0.8
+                Label:
+                    text:
+                        "Steganosaurus is a powerful tool for encrypting and hiding secret messages using either steganography combined with a book cipher or a Caesar shift with your own personal key. Click below to try now:\n\n" \
+                        "If you are unable to use the steganography setting, you may nee to check your device settings to allow the app access to you files"
+                    text_size: self.width, None
+                    font_name: 'design_elem/Accuratist.ttf'
+                    color: 75, 75, 75, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    padding: (50, 50)
+                    valign: 'top'
+                    halign: 'left'
+
+            FloatLayout:
+                MDRaisedButton:
+                    text: 'Try now'
+                    text_color: 75, 75, 75, 1
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    on_release: root.manager.current = 'encrypttype'
+
+
+<EncryptType>:
+    FloatLayout:
+        #Image:
+         #   source: 'design_elem/background.jpg'
+          #  allow_stretch: True
+           # keep_ratio: False
+            #opacity: 0.7
+
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                app.root.current = 'welcome'
+
+        MDRaisedButton:
+            text: 'Steganography'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 50
+            md_bg_color: 1,1,1,1
+            size_hint: 0.7, 0.15
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            on_release: root.manager.current = 'uploadimage'
+
+        MDRaisedButton:
+            text: 'Caesar Shift'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 50
+            md_bg_color: 1,1,1,1
+            size_hint: 0.7, 0.15
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            on_release: root.manager.current = 'caesarm'
+
+<CaesarMultiplex>:
+    FloatLayout:
+
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                app.root.current = 'welcome'
+
+        MDRaisedButton:
+            text: 'Encrypt with Caesar Cipher'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 50
+            md_bg_color: 1,1,1,1
+            size_hint: 0.7, 0.15
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            on_release: root.manager.current = 'caesare'
+
+        MDRaisedButton:
+            text: 'Decrypt with Caesar Cipher'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 50
+            md_bg_color: 1,1,1,1
+            size_hint: 0.7, 0.15
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            on_release: root.manager.current = 'caesard'
+<CaesarEncrypt>:
+    FloatLayout:
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                app.root.current = 'welcome'
+        MDLabel:
+            text: 'Encryption'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 55
+            color: 80, 80, 80, 1
+            pos_hint: {'center_x': 0.9, 'center_y': 0.9}
+        TextInput:
+            id: plaintext
+            hint_text: 'Enter plaintext'
+            size_hint: 0.3, 0.1
+            pos_hint: {'center_x': 0.3, 'center_y': 0.8}
+            foreground_color: 0.53, 0.72, 0.76, 1
+            multiline: False
+        TextInput:
+            id: shift
+            hint_text: 'Enter shift'
+            size_hint: 0.3, 0.1
+            pos_hint: {'center_x': 0.7, 'center_y': 0.8}
+            foreground_color: 0.53, 0.72, 0.76, 1
+            multiline: False
+        MDLabel:
+            id: output
+            text: 'Your result: '
+            font_name: 'design_elem/Boron.otf'
+            font_size: 55
+            color: 80, 80, 80, 1
+            pos_hint: {'center_x': 0.9, 'center_y': 0.6}
+
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                root.encrypt()
+
+<CaesarDecrypt>:
+    FloatLayout:
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                app.root.current = 'welcome'
+        MDLabel:
+            text: 'Decryption'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 55
+            color: 80, 80, 80, 1
+            pos_hint: {'center_x': 0.9, 'center_y': 0.9}
+        TextInput:
+            id: plaintext
+            hint_text: 'Enter plaintext'
+            size_hint: 0.3, 0.1
+            pos_hint: {'center_x': 0.3, 'center_y': 0.8}
+            foreground_color: 0.53, 0.72, 0.76, 1
+            multiline: False
+        TextInput:
+            id: shift
+            hint_text: 'Enter shift'
+            size_hint: 0.3, 0.1
+            pos_hint: {'center_x': 0.7, 'center_y': 0.8}
+            foreground_color: 0.53, 0.72, 0.76, 1
+            multiline: False
+        MDLabel:
+            id: output
+            text: 'Your result: '
+            font_name: 'design_elem/Boron.otf'
+            font_size: 55
+            color: 80, 80, 80, 1
+            pos_hint: {'center_x': 0.9, 'center_y': 0.6}
+
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                root.decrypt()
+
+
+<ChooseMethod>:
+    FloatLayout:
+       # Image:
+            #source: 'design_elem/background.jpg'
+            #allow_stretch: True
+            #keep_ratio: False
+            #opacity: 0.7
+
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                app.root.current = 'welcome'
+
+        MDRaisedButton:
+            text: 'Encrypt Image'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 50
+            md_bg_color: 1,1,1,1
+            size_hint: 0.7, 0.15
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            on_release: root.manager.current = 'encryption'
+
+        MDRaisedButton:
+            text: 'Decrypt Image'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 50
+            md_bg_color: 1,1,1,1
+            size_hint: 0.7, 0.15
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            on_release: root.manager.current = 'decryption'
+
+<Encrypter>:
+    RelativeLayout:
+        Image:
+            source: 'design_elem/background.jpg'
+            allow_stretch: True
+            keep_ratio: False
+
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                app.root.current = 'welcome'
+
+        MDLabel:
+            text: 'Encrypt'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 55
+            color: 80, 80, 80, 1
+            pos_hint: {'center_x': 0.88, 'center_y': 0.88}
+
+        TextInput:
+            id: url_input
+            hint_text: 'Enter URL Encryption Key'
+            size_hint: 0.5, 0.1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+            foreground_color: 0.53, 0.72, 0.76, 1
+            multiline: False
+
+        TextInput:
+            id: secret_message
+            hint_text: "Enter a message to encode here"
+            size_hint: 0.5, 0.3
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            foreground_color: 0.53, 0.72, 0.76, 1
+
+        MDRaisedButton:
+            text: 'Go!'
+            size_hint: 0.5, 0.1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            on_release:
+                root.download_and_save()
+                root.enter_message()
+                root.manager.current = 'downloadimage'
+
+        #Popup:
+         #   id: success_popup
+          #  title: 'Success'
+           # auto_dismiss: False
+            #size_hint: None, None
+            #size: "300dp", "200dp"
+            #pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+
+<Uploader>:
+    RelativeLayout:
+        Image:
+            source: 'design_elem/background.jpg'
+            allow_stretch: True
+            keep_ratio: False
+            opacity: 0.7
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            MDFloatingActionButton:
+                icon: "arrow-left"
+                pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+                theme_text_color: "Secondary"
+                md_bg_color: 1, 1, 1, 0.5
+                on_release:
+                    app.root.current = 'welcome'
+            MDLabel:
+                text: 'Select View Upload'
+                font_name: 'design_elem/Boron.otf'
+                font_size: 55
+                bold: True
+                color: 50, 50, 50, 1
+                valign: 'top'
+                halign: 'center'
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            FileChooserListView:
+                id: file_chooser
+                filters: ['*.png', '*.jpg', '*.jpeg']
+                on_selection: root.selected(self.selection)
+
+            MDRaisedButton:
+                text: 'View Image'
+                size_hint: 1, 0.1
+                on_release:
+                    root.open(file_chooser.path, file_chooser.selection)
+
+            Image:
+                id: image_view
+                source: ''
+                size_hint: 1, 0.6
+
+            MDRaisedButton:
+                text: 'Upload Image'
+                size_hint: 1, 0.1
+                on_release:
+                    root.save_image(file_chooser.selection)
+                    root.manager.current = 'choose_method'
+
+
+<Decrypter>:
+    RelativeLayout:
+        Image:
+            source: 'design_elem/background.jpg'
+            allow_stretch: True
+            keep_ratio: False
+
+        MDLabel:
+            text: 'Decrypt'
+            font_name: 'design_elem/Boron.otf'
+            font_size: 55
+            bold: True
+            color: 80, 80, 80, 1
+            pos_hint: {'center_x': 0.88, 'center_y': 0.88}
+
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                app.root.current = 'welcome'
+
+        TextInput:
+            id: url_decrypt
+            hint_text: 'Enter URL'
+            size_hint: 0.5, 0.1
+            foreground_color: 0.53, 0.72, 0.76, 1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            multiline: False
+
+        MDRaisedButton:
+            text: 'GO!'
+            size_hint: 0.5, 0.1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            on_release:
+                root.enter_url_key()
+                root.manager.current = 'secretscreen'
+
+
+<Downloader>:
+    RelativeLayout:
+        Image:
+            source: 'design_elem/background.jpg'
+            allow_stretch: True
+            keep_ratio: False
+            opacity: 0.7
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            MDFloatingActionButton:
+                icon: "arrow-left"
+                pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+                theme_text_color: "Secondary"
+                md_bg_color: 1, 1, 1, 0.5
+                on_release:
+                    app.root.current = 'welcome'
+
+            MDLabel:
+                text: 'Download to...'
+                font_name: 'design_elem/Boron.otf'
+                font_size: 55
+                bold: True
+                color: 80, 80, 80, 1
+                valign: 'top'
+                halign: 'center'
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            FileChooserListView:
+                id: file_chooser_download
+                rootpath: "/"
+                dirselect: True
+                on_selection: root.selectedpath(self.selection)
+
+            MDRaisedButton:
+                text: 'Download Image to Device'
+                size_hint: 1, 0.1
+                on_release:
+                    root.download_image(self)
+                    root.manager.current = 'welcome'
+
+
+<SecretsScreen>:
+    RelativeLayout:
+        Image:
+            source: 'design_elem/background.jpg'
+            allow_stretch: True
+            keep_ratio: False
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            ScrollView:
+                bar_width: 10
+                bar_color: 0.53, 0.72, 0.76, 0.8
+                Label:
+                    id: decrypted_label
+                    text: 'Decrypted text will appear here'
+                    text_size: self.width, None
+
+                    height: self.texture_size[1]
+                    padding: (50, 50)  # Adjust the padding as needed
+                    valign: 'top'  # Adjust the vertical alignment
+                    halign: 'left'  # Adjust the horizontal alignment
+
+        MDRaisedButton:
+            text: ' HOLD TO SHOW'
+            size_hint: 1, 1
+            on_press:
+                root.discovery()
+                self.opacity = 0
+            on_release:
+                self.opacity = 1
+
+        MDFloatingActionButton:
+            icon: "arrow-left"
+            pos_hint: {'center_x': 0.1, 'center_y': 0.9}
+            theme_text_color: "Secondary"
+            md_bg_color: 1, 1, 1, 0.5
+            on_release:
+                app.root.current = 'welcome'
