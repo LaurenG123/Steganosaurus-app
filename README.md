@@ -23,7 +23,7 @@ Steganosaurus was compiled using buildozer in a linux environment and is availab
 
 ### Where to find Steganosaurus
 Steganosaurus is currently registered on:
-
+(currently compatible with android up to android 10)
 
 
 A big thanks to the community who provided the packages and designs used in the creation of steganosaurus. We hope that the project will continue to inspire and serve as a prrof of concept for kivy python apps in the larger realm of app development.
